@@ -1,0 +1,22 @@
+{
+  "name": "express-routing",
+  "version": "1.0.0",
+  "description": "Just the default express.js routing example",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express.js",
+    "routing"
+  ],
+  "author": "Sherman Chen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3"
+  }
+}
