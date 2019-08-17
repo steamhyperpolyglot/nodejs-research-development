@@ -1,38 +1,16 @@
 let express = require('express');
 let router = express.Router();
 let uuidv4 = require('uuid/v4');
-
-let users = {
-	1: {
-		id: '1',
-		username: 'Sherman Chen',
-	},
-	2: {
-		id: '2',
-		username: 'Lucas Poh',
-	},
-};
-
-let messages = {
-	1: {
-		id: '1',
-		text: "Hello World",
-		userId: '1',
-	},
-	2: {
-		id: '2',
-		text: "By World",
-		userId: '2',
-	},
-};
+let userModel = require('../models/users');
+let messageModel = require('../models/messages');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  return res.send(Object.values(users));
+	return res.send(Object.values(userModel.users));
 });
 
 router.get('/users/:userId', (req, res) => {
-	return res.send(users[req.params.userId]);
+	return res.send(userModel.users[req.params.userId]);
 });
 
 router.post('/', (req, res) => {
@@ -48,24 +26,35 @@ router.delete('/:userId', (req, res) => {
 });
 
 router.get('/messages', (req, res) => {
-	return res.send(Object.values(messages));
+	return res.send(Object.values(messageModel.messages));
 });
 
 router.get('/messages/:messageId', (req, res) => {
-	return res.send(messages[req.params.messageId]);
+	return res.send(messageModel.messages[req.params.messageId]);
 });
 
 router.post('/messages', (req, res) => {
 	//let messageText = req.body.text;
-
 	const id = uuidv4();
 	const message = {
 		id,
-		text: req.body.text
+		text: req.body.text,
+		userId: req.body.userId,
 	};
 	
-	messages[id] = message;
+	messageModel.messages[id] = message;
 	
+	return res.send(message);
+});
+
+router.delete('/messages/:messageId', (req, res) => {
+	const {
+		[req.params.messageId]: message,
+		...otherMessages
+	} = messageModel.messages;
+
+	messageModel.messages = otherMessages;
+
 	return res.send(message);
 });
 
