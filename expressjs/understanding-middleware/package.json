@@ -1,0 +1,25 @@
+{
+  "name": "understanding-middleware",
+  "version": "1.0.0",
+  "description": "This is a code sample for understanding more about the middleware within Express.JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express.js",
+    "middleware",
+    "web",
+    "api",
+    "node.js"
+  ],
+  "author": "Sherman Chen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.2.0",
+    "eslint-plugin-react": "^7.14.3"
+  }
+}
