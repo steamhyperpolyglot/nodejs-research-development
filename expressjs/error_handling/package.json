@@ -1,0 +1,22 @@
+{
+  "name": "error_handling",
+  "version": "1.0.0",
+  "description": "Some code examples of error handling in Express.JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express.js",
+    "error",
+    "handling",
+    "Node.js",
+    "JavaScript"
+  ],
+  "author": "Sherman Chen",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.2.1",
+    "eslint-plugin-react": "^7.14.3"
+  }
+}
