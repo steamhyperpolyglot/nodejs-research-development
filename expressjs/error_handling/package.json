@@ -4,6 +4,7 @@
   "description": "Some code examples of error handling in Express.JS",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -18,5 +19,8 @@
   "devDependencies": {
     "eslint": "^6.2.1",
     "eslint-plugin-react": "^7.14.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
